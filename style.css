@@ -43,3 +43,18 @@ body {
 
 /* La biblioteca StPageFlip genera sus propias clases para las sombras, etc. */
 /* No necesitamos estilos para .flipped, .spiral-binding, o los botones. */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flip-book-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
