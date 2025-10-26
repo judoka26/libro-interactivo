@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatInput = document.getElementById('chat-input');
     const chatBox = document.getElementById('chat-box');
 
+    const chatContainer = document.getElementById('chat-container');
+
+    chatContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
     sendBtn.addEventListener('click', () => {
         const userMessage = chatInput.value;
         if (userMessage.trim() === '') return;
