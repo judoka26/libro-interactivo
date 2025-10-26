@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipbook Interactivo con StPageFlip</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Contenedor del Libro -->
+    <div class="flip-book-container">
+        <div id="book">
+            <!-- Portada -->
+            <div class="page" data-density="hard">
+                <div class="front-content cover">
+                    <h1>Manual Interactivo</h1>
+                </div>
+            </div>
+
+            <!-- Páginas Interiores -->
+            <div class="page">
+                <div class="front-content">
+                    <h2>Resumen del Contenido</h2>
+                    <p>Este es un resumen detallado del manual. La nueva biblioteca permite pasar la página arrastrando la esquina con el ratón.</p>
+                    <ul>
+                        <li>Introducción a los componentes.</li>
+                        <li>Diagnóstico de fallas comunes.</li>
+                        <li>Guía de reparación paso a paso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="front-content">
+                    <h2>Video Demostrativo</h2>
+                    <p>Aquí puedes incrustar un video. Puede ser un tutorial, una demostración o cualquier material de apoyo visual.</p>
+                    <video controls width="80%">
+                        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="front-content">
+                    <h2>Información del PDF</h2>
+                    <p>Este espacio está dedicado a la información detallada que normalmente encontrarías en tu PDF.</p>
+                    <p>Prueba a hacer clic y arrastrar la esquina inferior derecha para pasar la página.</p>
+                </div>
+            </div>
+
+            <!-- Contraportada -->
+            <div class="page" data-density="hard">
+                <div class="front-content cover">
+                    <h2>Fin del Manual</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir la biblioteca StPageFlip -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+    <!-- Nuestro script de inicialización -->
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+</body>
+</html>

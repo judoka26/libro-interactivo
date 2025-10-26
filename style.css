@@ -1,0 +1,45 @@
+/* Estilos Generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #d3b89c;
+    background-image: linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05)),
+                      linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05));
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    margin: 0;
+    overflow: hidden; /* Ocultar cualquier desbordamiento */
+}
+
+.flip-book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Estilos para el contenido de las páginas. La biblioteca controla el tamaño y la posición. */
+.page {
+    background-color: #fdfdfd;
+    border: 1px solid #c9c9c9;
+}
+
+.page .front-content {
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Estilo para la portada y contraportada */
+.cover {
+    background-color: #a98d6f; /* Color cartón */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+/* La biblioteca StPageFlip genera sus propias clases para las sombras, etc. */
+/* No necesitamos estilos para .flipped, .spiral-binding, o los botones. */
